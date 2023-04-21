@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:merin_app/components/button.dart';
 import 'package:merin_app/helper/const.dart';
+import 'dart:typed_data';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -45,21 +47,35 @@ class WelcomePage extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        const Center(
-                          child: Text("Welcome"),
+                        Center(
+                          child: Text(
+                            "Welcome",
+                            style: textStylePoppins.copyWith(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 32,
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           height: 16,
                         ),
-                        const Text(
+                        Text(
                           "MeRin is an application where you can set the reminder to take your medicine and put your medication schedule so you would not miss it!",
                           textAlign: TextAlign.justify,
+                          style: textStylePoppins.copyWith(
+                            fontSize: 14,
+                          ),
                         ),
                         const SizedBox(
                           height: 24,
                         ),
-                        const Center(
-                          child: Text("Sign in with:"),
+                        Center(
+                          child: Text(
+                            "Sign in with:",
+                            style: textStylePoppins.copyWith(
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           height: 22,
@@ -86,6 +102,28 @@ class WelcomePage extends StatelessWidget {
                               width: 49,
                             ),
                           ],
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Text(
+                          "Or",
+                          style: textStylePoppins.copyWith(
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        Center(
+                          child: MyButton(
+                              buttonText: "Get Started",
+                              buttonColor: Colors.white,
+                              textColor: primaryColor,
+                              paddingHorizontal: 106,
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/signup');
+                              }),
                         ),
                       ],
                     ),

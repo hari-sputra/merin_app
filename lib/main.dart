@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:merin_app/signup.dart';
 import 'package:merin_app/welcome.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const WelcomePage(),
-        // '/home': (context) => HomePage(),
+        '/signup': (context) => const SignUpPage(),
       },
     );
   }
