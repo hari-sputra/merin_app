@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:merin_app/components/button.dart';
 import 'package:merin_app/helper/const.dart';
-import 'dart:typed_data';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -120,9 +119,9 @@ class WelcomePage extends StatelessWidget {
                               buttonText: "Get Started",
                               buttonColor: Colors.white,
                               textColor: primaryColor,
-                              paddingHorizontal: 106,
                               onPressed: () {
-                                Navigator.pushNamed(context, '/signup');
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, "/signin", (route) => false);
                               }),
                         ),
                       ],

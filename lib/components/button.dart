@@ -4,14 +4,12 @@ class MyButton extends StatelessWidget {
   final String buttonText;
   final Color buttonColor, textColor;
   final Function onPressed;
-  final double paddingHorizontal;
 
   const MyButton(
       {Key? key,
       required this.buttonText,
       required this.buttonColor,
       required this.textColor,
-      required this.paddingHorizontal,
       required this.onPressed})
       : super(key: key);
 
@@ -28,9 +26,9 @@ class MyButton extends StatelessWidget {
         ),
       ),
       style: ElevatedButton.styleFrom(
+        minimumSize: const Size(349, 52),
         primary: buttonColor,
-        padding:
-            EdgeInsets.symmetric(vertical: 12.0, horizontal: paddingHorizontal),
+        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24.0),
         ),
